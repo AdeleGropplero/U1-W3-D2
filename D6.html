@@ -167,9 +167,9 @@
         ul1.style.display = "none";
       };
       ul1.onclick = hideFirstUl;
-      /* Qui stiamo assegnando la funzione hideFirstUl come listener per l'evento di click. 
-        Quando scriviamo solo il nome della funzione senza le parentesi, stiamo facendo riferimento 
-        alla funzione stessa (non la stiamo eseguendo). 
+      /* Qui stiamo assegnando la funzione hideFirstUl come listener per l'evento di click.
+        Quando scriviamo solo il nome della funzione senza le parentesi, stiamo facendo riferimento
+        alla funzione stessa (non la stiamo eseguendo).
         Non ci sono parentesi dopo hideFirstUl, quindi la funzione non viene eseguita subito, ma solo al click.
         Questo permette di separare la logica del comportamento (nascondere la lista) dall'evento (il clic) stesso. */
 
@@ -198,8 +198,16 @@
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
+      const footerA = document.querySelector("footer a");
+      const revealFooterLink = function () {
+        footerA.onclick = function () {
+          const url = footerA.getAttribute("href");
 
-      const revealFooterLink = function () {};
+          alert(url);
+        };
+      };
+      revealFooterLink();
+      //revealFooterLink(alert());
 
       /* ESERCIZIO 11
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
