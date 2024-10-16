@@ -213,8 +213,55 @@
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
          La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
       */
+      const generateTable = function () {
+        const container = document.getElementById("tableArea");
+        const table = document.createElement("table");
+        table.style.width = "100%";
 
-      const generateTable = function () {};
+        const firstRow = document.createElement("tr");
+
+        const th1 = document.createElement("th");
+        th1.innerText = "Immagine";
+
+        const th2 = document.createElement("th");
+        th2.innerText = "Nome prodotto";
+
+        const th3 = document.createElement("th");
+        th3.innerText = "Quantità";
+
+        const th4 = document.createElement("th");
+        th4.innerText = "Prezzo";
+
+        firstRow.appendChild(th1);
+        firstRow.appendChild(th2);
+        firstRow.appendChild(th3);
+        firstRow.appendChild(th4);
+
+        table.appendChild(firstRow);
+        container.appendChild(table);
+
+        const secondRow = document.createElement("tr");
+        const tdimg1 = document.createElement("td");
+        const tdimg = document.createElement("img");
+        tdimg.src =
+          "https://images.unsplash.com/photo-1729002125469-b5304d64de55?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8";
+        tdimg.style.width = "300px";
+
+        const td2 = document.createElement("td");
+        td2.innerText = "lucciole";
+
+        const td3 = document.createElement("td");
+        td3.innerText = 8;
+
+        const td4 = document.createElement("td");
+        td4.innerText = 79;
+
+        secondRow.append(tdimg1, td2, td3, td4);
+        tdimg1.appendChild(tdimg);
+
+        table.append(secondRow);
+      };
+      generateTable();
 
       /* ESERCIZIO 12
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
